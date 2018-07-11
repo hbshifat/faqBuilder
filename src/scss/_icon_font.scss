@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "wp-pricing";
+  src:url("../fonts/wp-pricing.eot");
+  src:url("../fonts/wp-pricing.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/wp-pricing.woff") format("woff"),
+  url("../fonts/wp-pricing.ttf") format("truetype"),
+  url("../fonts/wp-pricing.svg#wp-pricing") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "wp-pricing" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="wpp-"]:before,
+[class*=" wpp-"]:before {
+  font-family: "wp-pricing" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wpp-android-done:before {
+  content: "\62";
+}
+.wpp-android-arrow-back:before {
+  content: "\65";
+}
+.wpp-ios-arrow-forward:before {
+  content: "\6a";
+}
+.wpp-trash-o:before {
+  content: "\64";
+}
+.wpp-clone:before {
+  content: "\6b";
+}
+.wpp-android-add:before {
+  content: "\6c";
+}
+.wpp-bulb:before {
+  content: "\66";
+}
+.wpp-android-close:before {
+  content: "\61";
+}
+.wpp-android-cancel:before {
+  content: "\67";
+}
+.wpp-checkmark-circled:before {
+  content: "\63";
+}
+.wpp-android-checkmark-circle:before {
+  content: "\69";
+}
+.wpp-android-bulb:before {
+  content: "\6d";
+}
+.wpp-information-circled:before {
+  content: "\6e";
+}
+.wpp-ios-browsers-outline:before {
+  content: "\6f";
+}
+.wpp-ios-circle-filled:before {
+  content: "\68";
+}
+.wpp-ios-heart:before {
+  content: "\70";
+}
+.wpp-ios-lightbulb:before {
+  content: "\71";
+}
+.wpp-minus-circled:before {
+  content: "\72";
+}
+.wpp-minus-round:before {
+  content: "\73";
+}
+.wpp-android-add-circle:before {
+  content: "\74";
+}
+.wpp-record:before {
+  content: "\75";
+}

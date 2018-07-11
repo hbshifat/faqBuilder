@@ -1,0 +1,25 @@
+.wp_pricing_wrapper.ninja_table_skin_1 {
+  &.ninja_table_border_yes {
+    .wp_pricing_table-inner {
+      .wp_pricing_table_column {
+        &.ninja_featured_column{
+          .wp_pricing_ribbon{
+            .wp_pricing_ribbon_text{
+              //background: #fff;
+              //color: $primaryColor;
+            }
+          }
+        }
+        .wp_pricing_table_header{
+         // background: $primaryColor;
+          //h2{
+          //  color: #fff;
+          //}
+          //h4{
+          //  color: #fff;
+          //}
+        }
+      }
+    }
+  }
+}
