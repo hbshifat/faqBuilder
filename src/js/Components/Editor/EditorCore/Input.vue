@@ -38,8 +38,8 @@ export default {
 
 <style lang="scss">
 .ninja-input {
-    .el-input {
-        input.el-input__inner {
+    .el-input,.el-textarea {
+        input.el-input__inner,.el-textarea__inner {
             background: #2C2D2D;
             border: none !important;
             color:#fff;

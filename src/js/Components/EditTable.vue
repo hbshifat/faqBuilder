@@ -42,7 +42,11 @@
 
 
             <div class="wp_pricing_editor_control">
-                <faq_editor :faq_content="faqConfig.faq_content"></faq_editor>
+                <faq_editor 
+                :faq_content="faqConfig.faq_content"
+                :faq_style="faqConfig.faq_style"
+                :faq_layout="faqConfig.faq_layout"
+                ></faq_editor>
             </div>
         </div>
 
@@ -68,7 +72,13 @@
                         
                     },
                     faq_layout: {},
-                    faq_style:{}
+                    faq_style:{
+                        template_type:'background',
+                        question_text_color:'#000000',
+                        item_backgroung_color:'#ffffff',
+                        answer_text_color:'#636363',
+                        category_text_color:'#000000'
+                    }
                 },
                 app_ready: false,
                 demo_url: '',

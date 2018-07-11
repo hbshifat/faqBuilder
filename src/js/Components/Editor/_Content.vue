@@ -70,7 +70,7 @@
                 editingQuestionCategoryEditor: false,
                 mockPlan: {
                     title: 'New Created Category.',
-                    icon:'',
+                    icon:'No icon',
                     questions:[]
                 }
             }

@@ -14,9 +14,9 @@
                         @click="current_tab = 'contents'"
                 >Contents</li>
                 <li 
-                        :class="(current_tab == 'elements') ? 'ninja_active_nav' : ''"
-                        @click="current_tab = 'elements'"
-                >Elements</li>
+                        :class="(current_tab == 'layout') ? 'ninja_active_nav' : ''"
+                        @click="current_tab = 'layout'"
+                >Layout</li>
             </ul>
         </div>
         
@@ -25,6 +25,12 @@
         <div v-if="current_tab == 'contents'" class="editor_item_sections">
             <faq-content :faq_content="faq_content"></faq-content>
         </div>
+        <div v-if="current_tab == 'style'" class="editor_item_sections">
+            <faq-style :faq_style="faq_style"></faq-style>
+        </div>
+        <div v-if="current_tab == 'layout'" class="editor_item_sections">
+            <faq-layout :faq_layout="faq_layout"></faq-layout>
+        </div>
         
     </div>
 </template>
@@ -32,18 +38,22 @@
 <script type="text/babel">
     import NinjaImageSelect from './EditorCore/ImageSelect';
     import NinjaColorPicker from './EditorCore/ColorSelect';
-    import NinjaSwitch from './EditorCore/Switch';
-    import FaqContent from './_Content';
+    import NinjaSwitch      from './EditorCore/Switch';
+    import FaqContent       from './_Content';
+    import FaqStyle         from './_Style';
+    import FaqLayout        from './_Layout';
     import NinjaElementStyles from './_ElementStyles.vue';
     
     export default {
-        name: 'pricing_editor',
-        props: ['faq_content'],
+        name: 'faq_editor',
+        props: ['faq_content','faq_style','faq_layout'],
         components: {
             NinjaImageSelect,
             NinjaColorPicker,
             NinjaSwitch,
             FaqContent,
+            FaqStyle,
+            FaqLayout,
             NinjaElementStyles
         },
         data() {
