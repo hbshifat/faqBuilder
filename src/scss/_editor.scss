@@ -46,7 +46,10 @@
 }
 .wp_faq_editor_preview {
   width: 75%;
-  background: white;
+  background: url('../img/bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: block;
 }
 .wp_faq_editor_control {
