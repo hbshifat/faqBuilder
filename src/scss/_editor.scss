@@ -38,21 +38,19 @@
 }
 
 /*========= WPP header css =========*/
-.wp_pricing_editor {
-  display: block;
+.wp_faq_editor {
+  display: flex;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-.wp_pricing_editor_preview {
+.wp_faq_editor_preview {
   width: 75%;
   background: white;
-  float: left;
   display: block;
 }
-.wp_pricing_editor_control {
+.wp_faq_editor_control {
   width: 25%;
-  float: left;
   position: relative;
   background: #38393a;
   color: white;
@@ -106,7 +104,7 @@
 
 
 /*======== Editors Style Tab CSS =========*/
-.wp_pricing_editor_control{
+.wp_faq_editor_control{
   .ninja_editor_tab{
     position: relative;
     background: #38393a;
@@ -293,7 +291,7 @@
             top: 10px;
           }
         }
-        img{}
+        
         .ninja_label{
           color: #fff;
           margin-top: 20px;

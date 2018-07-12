@@ -1,5 +1,7 @@
 <template>
     <div class="ninja_full_width_screen">
+
+        <!-- Start: FAQ Header -->
         <div class="wpp_section_header">
             <div class="wpp_section_title">
                 <div v-if="!table_editing" class="ninja_header_show">
@@ -27,39 +29,46 @@
             </div>
         </div>
 
+        <!-- End: FAQ Header -->
 
 
 
-        <div  class="wp_pricing_editor">
-            <div class="wp_pricing_editor_preview">
-                <div class="wp_pricing_wrapper">
-                    <div class="wp_pricing_table-inner">
-                       view will be there
+        <!-- Start: FAQ EDITOR -->
+        <div  class="wp_faq_editor">
+            <!-- Start: FAQ Editor Preview -->
+            <div class="wp_faq_editor_preview">
+                <div class="wp_faq_wrapper">
+                    <div class="wp_faq_table-inner">
+                       <faq-editor-preview :faq_config="faqConfig"></faq-editor-preview>
                     </div>
                 </div>
             </div>
+            <!-- End: FAQ Editor Preview -->
 
 
-
-            <div class="wp_pricing_editor_control">
-                <faq_editor 
+            <!-- Start: FAQ Editor customizer-->
+            <div class="wp_faq_editor_control">
+                <faq-editor 
                 :faq_content="faqConfig.faq_content"
                 :faq_style="faqConfig.faq_style"
                 :faq_layout="faqConfig.faq_layout"
-                ></faq_editor>
+                ></faq-editor>
             </div>
+            <!-- End: FAQ Editor customizer-->
         </div>
-
+        <!-- End: FAQ EDITOR -->
     </div>
 </template>
 
 <script type="text/babel">
-    import faq_editor from './Editor/FaqEditor';
+    import faqEditorPreview from './View/FaqEditorPreview'
+    import faqEditor from './Editor/FaqEditor';
 
     export default {
         name: 'edit_pricing_table',
         components: {
-            faq_editor
+            faqEditor,
+            faqEditorPreview
         },
         data() {
             return {
@@ -71,7 +80,10 @@
                         faq_question_categories:[],
                         
                     },
-                    faq_layout: {},
+                    faq_layout: {
+                        layout_type:'accordion',
+                        accordion_icon:'plus'
+                    },
                     faq_style:{
                         template_type:'background',
                         question_text_color:'#000000',
