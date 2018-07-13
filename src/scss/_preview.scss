@@ -8,6 +8,66 @@
     }
 }
 
-.ninja-faq-category-wrapper {
-    
+.ninja-faq-content-category {
+    margin-top: 60px;
+
+    .ninja-faq-content-category-title {
+        font-size: 24px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        margin-bottom: 38px;
+        margin-top: 60px;
+        .ninja-faq-content-category-title-icon {
+            margin-right: 12px;
+        }
+        .ninja-faq-content-category-title-icon,.ninja-faq-content-category-title-text {
+            color: #424242;
+        }
+
+    }
+}
+
+
+.ninja-faq-content-category-items {
+    position: relative;
+    &.clear {
+        border-radius: 0;
+        margin-left: 40px;
+    }
+    &.background {
+        border-radius: 10px;
+
+        .ninja-faq-content-category-item:first-child {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .ninja-faq-content-category-item {
+            margin-bottom: 0;
+            box-shadow: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+
+            .ninja-faq-content-category-item-question {
+                font-size: 19px;
+                font-weight: 600;
+                line-height: 26px;
+                margin-bottom: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 26px;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+        }
+
+
+    }
+    &.backgroundShadow,&.backgroundBorder {
+        border-radius: 0px;
+    }
 }

@@ -10,8 +10,8 @@
              <el-col
             :xs="{span: 24, offset: 0}"
             :sm="{span: 24, offset: 0}"
-            :md="{span: 18, offset: 3}"
-            :lg="{span: 16, offset: 4}"
+            :md="{span: 24, offset: 0}"
+            :lg="{span: 24, offset: 0}"
             :xl="{span: 16, offset: 4}">
                 <el-row :gutter="50">
                     <!-- Start: FAQ Categories -->
@@ -21,16 +21,18 @@
                         :category_title_visibility="category_title_visibility"
                         :category="category"
                         :faq_style="faq_style"
-                        v-if="category.questions.length"
                         :layout="layout">
 
                         <!-- Start: Questions -->
-                        <template>
-                        <faq-question 
-                        v-for="(question,ques_index) in category.questions"
-                        :key="ques_index"
-                        ></faq-question>
-                        </template>
+                        <div class="ninja-faq-content-category-items" :class="[faq_style.template_type]">
+                            <faq-question 
+                            v-for="(question,ques_index) in category.questions"
+                            :key="ques_index"
+                            :question="question"
+                            :layout="layout"
+                            :faq_style="faq_style"
+                            ></faq-question>
+                        </div>
                         <!-- End: Questions -->
 
                     </faq-category>
