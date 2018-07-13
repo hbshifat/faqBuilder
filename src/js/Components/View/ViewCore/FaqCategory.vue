@@ -1,5 +1,4 @@
 <template>
-
         <el-col :span="grid">
             <div class="ninja-faq-content-category" :class="[layout.layout_type]">
                 <div 
@@ -28,6 +27,17 @@ export default {
         grid(){
             return (this.layout.layout_type == 'multicolumn' ? 12 : 24)
         }
+    },
+    created(){
+        window.Bus.$on('visibleAnswer',(newValue)=>{
+            console.log(newValue);
+            this.$children[0].$children.map(item=>{
+                this.$set(item,'openAnswer',false)
+            })
+            this.$set(this.$children[0].$children[newValue.index],'openAnswer',newValue.openAnswer);
+
+            console.log(this.$children[0].$children);
+        })
     }
 }
 </script>

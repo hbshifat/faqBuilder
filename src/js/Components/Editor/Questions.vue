@@ -59,7 +59,8 @@ export default {
             editingQuestionsEditor: false,
             mockPlan: {
                 title: 'Question ?',
-                answer:''
+                answer:'',
+                is_active:false
             }
         }
     },

@@ -14,7 +14,7 @@ import elementUi from 'element-ui';
 Vue.use(elementUi);
 import 'element-ui/lib/theme-chalk/index.css';
 
-
+window.Bus = new Vue();
 
 const router = new VueRouter({
     routes

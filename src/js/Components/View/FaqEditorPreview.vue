@@ -26,12 +26,13 @@
                         <!-- Start: Questions -->
                         <div class="ninja-faq-content-category-items" :class="[faq_style.template_type]">
                             <faq-question 
-                            v-for="(question,ques_index) in category.questions"
-                            :key="ques_index"
-                            :question="question"
-                            :layout="layout"
-                            :faq_style="faq_style"
-                            ></faq-question>
+                                v-for="(question,ques_index) in category.questions"
+                                :key="ques_index"
+                                :question="question"
+                                :layout="layout"
+                                :index="ques_index"
+                                :faq_style="faq_style">
+                            </faq-question>
                         </div>
                         <!-- End: Questions -->
 
@@ -69,7 +70,9 @@ export default {
     components: {
         FaqCategory,
         FaqQuestion
-    }
+    },
+    
+
 }
 </script>
 
