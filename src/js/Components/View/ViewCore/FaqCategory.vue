@@ -3,12 +3,15 @@
             <div class="ninja-faq-content-category" :class="[layout.layout_type]">
                 <div 
                     class="ninja-faq-content-category-title" 
-                    v-if="category_title_visibility">
+                    v-if="category_title_visibility"
+                    >
 
-                    <div class="ninja-faq-content-category-title-icon">
+                    <div class="ninja-faq-content-category-title-icon" 
+                    :style="{color: faq_style.category_text_color}">
                         <i :class="[category.icon]"></i>
                     </div>
-                    <span class="ninja-faq-content-category-title-text">{{category.title}}</span>
+                    <span class="ninja-faq-content-category-title-text" 
+                    :style="{color: faq_style.category_text_color}">{{category.title}}</span>
                 </div>
 
                 <div class="ninja-faq-content-category-items">
@@ -32,9 +35,9 @@ export default {
         window.Bus.$on('visibleAnswer',(newValue)=>{
             console.log(newValue);
             this.$children[0].$children.map(item=>{
-                this.$set(item,'openAnswer',false)
+                this.$set(item.question,'is_active',false)
             })
-            this.$set(this.$children[0].$children[newValue.index],'openAnswer',newValue.openAnswer);
+            this.$set(this.$children[0].$children[newValue.index].question,'is_active',newValue.openAnswer);
 
             console.log(this.$children[0].$children);
         })

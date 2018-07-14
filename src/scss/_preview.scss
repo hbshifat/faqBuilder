@@ -37,10 +37,101 @@
         position: relative;
         &.clear {
             border-radius: 0;
-            margin-left: 40px;
+
+            .ninja-faq-content-category-item {
+                box-shadow: none;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+                background: transparent;
+
+                &:first-child {
+                    border-top: 1px solid rgba(0,0,0,0.1);
+                }
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 26px 0px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                    .ninja-faq-content-category-item-question-icon {
+                        min-height: 16px;
+                        min-width: 16px;
+                        position: relative;
+                        border: none;
+                        cursor: pointer;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: 0.2s;
+                        background: transparent;
+                        outline: none;
+                        padding: 4px;
+                        opacity: 0.3;
+                        box-sizing: content-box;
+                        align-self: baseline;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 0 26px;
+                    cursor: auto;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    transition: max-height 1s linear;
+                    
+
+                    &.open {
+                        padding: 14px 26px;
+                        max-height: 600px;
+                    }
+                    &.collasps {
+                        max-height: 0px;
+                    }
+                }
+
+
+            }
         }
         &.background {
             border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
     
             .ninja-faq-content-category-item:first-child {
                 border-radius: 10px 10px 0 0;
@@ -54,6 +145,7 @@
                 padding: 0;
                 position: relative;
                 overflow: hidden;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
     
                 .ninja-faq-content-category-item-question {
                     font-size: 19px;
@@ -66,6 +158,10 @@
                     padding: 30px 26px;
                     position: relative;
                     transition: all 0.3s ease;
+
+                    &.accordion-style {
+                        background: #ffffff !important;
+                    }
 
 
                     .ninja-faq-content-category-item-question-icon {
@@ -112,18 +208,20 @@
 
                 .ninja-faq-content-category-item-answer {
                     padding: 0 26px;
-                    transition: all 0.3s linear;
                     cursor: auto;
                     background-color: #fff;
                     box-sizing: content-box;
-                    transform: scaleY(0);
                     transform-origin: center top;
                     overflow: hidden;
-                   
+                    transition: max-height 1s linear;
+                    
 
                     &.open {
                         padding: 14px 26px;
-                        transform: scaleY(1);
+                        max-height: 600px;
+                    }
+                    &.collasps {
+                        max-height: 0px;
                     }
                 }
 
@@ -132,8 +230,358 @@
     
     
         }
-        &.backgroundShadow,&.backgroundBorder {
+        &.backgroundShadow {
             border-radius: 0px;
+
+            .ninja-faq-content-category-item {
+                margin-bottom: 15px;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 30px 26px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                    .ninja-faq-content-category-item-question-icon {
+                        min-height: 16px;
+                        min-width: 16px;
+                        position: relative;
+                        border: none;
+                        cursor: pointer;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: 0.2s;
+                        background: transparent;
+                        outline: none;
+                        padding: 4px;
+                        opacity: 0.3;
+                        box-sizing: content-box;
+                        align-self: baseline;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 0 26px;
+                    cursor: auto;
+                    background-color: #fff;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    transition: max-height 1s linear;
+                    
+
+                    &.open {
+                        padding: 14px 26px;
+                        max-height: 600px;
+                    }
+                    &.collasps {
+                        max-height: 0px;
+                    }
+                }
+
+
+            }
+        }
+
+        &.backgroundBorder {
+            border-radius: 0px;
+
+            .ninja-faq-content-category-item {
+                margin-bottom: 15px;
+                box-shadow: none;
+                border: 1px solid rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 30px 26px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                    .ninja-faq-content-category-item-question-icon {
+                        min-height: 16px;
+                        min-width: 16px;
+                        position: relative;
+                        border: none;
+                        cursor: pointer;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: 0.2s;
+                        background: transparent;
+                        outline: none;
+                        padding: 4px;
+                        opacity: 0.3;
+                        box-sizing: content-box;
+                        align-self: baseline;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 2px;
+                            position: absolute;
+                            transition: 0.3s;
+                            background: #000000;
+                            border-radius: 4px;
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 0 26px;
+                    cursor: auto;
+                    background-color: #fff;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    transition: max-height 1s linear;
+                    
+
+                    &.open {
+                        padding: 14px 26px;
+                        max-height: 600px;
+                    }
+                    &.collasps {
+                        max-height: 0px;
+                    }
+                }
+
+
+            }
+        }
+
+        
+    }
+}
+
+
+.ninja-faq-content-category.list, .ninja-faq-content-category.multicolumn {
+    .ninja-faq-content-category-items {
+        position: relative;
+        &.clear {
+            border-radius: 0;
+
+            .ninja-faq-content-category-item {
+                box-shadow: none;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+                background: transparent;
+
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 14px 26px;
+                    cursor: auto;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    height: auto;
+                }
+
+
+            }
+        }
+        &.background {
+        
+            overflow: hidden;
+    
+    
+            .ninja-faq-content-category-item {
+                margin-bottom: 15px;
+                box-shadow: none;
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+    
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 26px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 14px 26px;
+                    cursor: auto;
+                    background-color: #fff;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    height: auto;
+                }
+
+
+            }
+    
+    
+        }
+        &.backgroundShadow {
+            border-radius: 0px;
+
+            .ninja-faq-content-category-item {
+                margin-bottom: 15px;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 26px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 14px 26px;
+                    cursor: auto;
+                    background-color: #fff;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    height: auto;
+                }
+
+
+            }
+        }
+
+        &.backgroundBorder {
+            border-radius: 0px;
+
+            .ninja-faq-content-category-item {
+                margin-bottom: 15px;
+                box-shadow: none;
+                border: 1px solid rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+
+                .ninja-faq-content-category-item-question {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 26px;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                }
+
+                .ninja-faq-content-category-item-answer {
+                    padding: 14px 26px;
+                    cursor: auto;
+                    background-color: #fff;
+                    box-sizing: content-box;
+                    transform-origin: center top;
+                    overflow: hidden;
+                    height: auto;
+                    
+                }
+
+
+            }
         }
     }
 }

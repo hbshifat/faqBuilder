@@ -58,8 +58,8 @@ export default {
         return {
             editingQuestionsEditor: false,
             mockPlan: {
-                title: 'Question ?',
-                answer:'',
+                title: 'Your Question?',
+                answer:'Write your answer here.',
                 is_active:false
             }
         }

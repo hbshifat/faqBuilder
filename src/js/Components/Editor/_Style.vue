@@ -5,8 +5,11 @@
         title="TEMPLATE"
         v-model="faq_style.template_type"></ninja-select-box>
 
-        <ninja-color-picker v-model="faq_style.question_text_color" title="ITEM BACKGROUND COLOR"></ninja-color-picker>
-        <ninja-color-picker v-model="faq_style.item_backgroung_color" title="QUESTION TEXT COLOR"></ninja-color-picker>
+
+        <ninja-color-picker v-if="faq_style.template_type != 'clear'" v-model="faq_style.item_backgroung_color" title="ITEM BACKGROUND COLOR"></ninja-color-picker>
+
+        <ninja-color-picker v-model="faq_style.question_text_color" title="ITEM TEXT COLOR"></ninja-color-picker>
+        
         <ninja-color-picker v-model="faq_style.answer_text_color" title="ANSWER TEXT COLOR"></ninja-color-picker>
         <ninja-color-picker v-model="faq_style.category_text_color" title="CATEGORY TEXT COLOR"></ninja-color-picker>
     </div>
